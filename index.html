@@ -20,39 +20,39 @@
 					<p>here you can check yours math exercises and finally print 1D code.</p>
 				</div>
 				<ul>
-					<li class="form_row">
+					<li>
 						<label for="year">Select year:</label>
 						<div id="links_years"></div>
 						<input type="text" id="year" class="input l4" maxlength="4" onchange="createLinksForClasses(this.value);" hidden="hidden">
 					</li>
-					<li class="form_row" id="container_classes">
+					<li id="container_classes">
 						<label for="class_nr">Select class:</label>
 						<div id="links_classes"></div>
 						<input id="class_nr" class="input l4" maxlength="1" hidden="hidden">
 					</li>
-					<li class="form_row" id="container_answers">
+					<li id="container_answers">
 						<label for="answers">Answers <div id="chars_counter"></div></label>
 						<input id="answers" class="input l30" maxlength="30" onkeyup="countChars();">
 					</li>
-					<li class="form_row">
+					<li>
 							<div class="error" id="warnings"></div>
 					</li>
-					<li class="form_row" id="container_button">
+					<li id="container_button">
 						<button type="submit" class="button" onclick="checkAnswers(); return false;">CHECK&#11208;</button>
-					<p class="tip">To miss the answer type <span class="keyboard">SPACE</span> instead.</p>
+						<p class="tip">To miss the answer type <span class="keyboard">SPACE</span> instead.</p>
 					</li>
 				</ul>
 		</form>
 		<form id="results">
 			<ul>
 				<h1>Results</h1>
-				<li class="form-row">
+				<li>
 					<p>Correct: <span id="good_answers"></span></p>
 				</li>
-				<li class="form-row">
+				<li>
 					<p>Mistakes in: <span id="bad_answers"></span></p>
 				</li>
-				<li class="form-row">
+				<li>
 					<button type="submit" class="button" onclick="document.getElementById('form1').style.display='flex'; document.getElementById('results').style.display='none'; return false;">&#11207;BACK</button><button id="print_code" class="button" onclick="window.print();">Print code</button>
 					</li>
 				</ul>

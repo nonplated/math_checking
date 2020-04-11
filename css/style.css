@@ -50,7 +50,7 @@ body {
     border-top: 10px solid;
     border-bottom: 10px solid;
     border-color: var(--error_color);
-    border-radius: 3px;
+    /* border-radius: 3px; */
     margin: 0 auto;
     padding: 3mm;
     margin-top: 6mm;
@@ -92,7 +92,7 @@ button {
     margin-top: 5mm;
 }
 
-li.form_row {
+li {
     margin-left: 10px;
     margin-right: 10px;
     display: flex;

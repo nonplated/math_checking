@@ -25,7 +25,7 @@ body {
 }
 
 .bg-image {
-    background-image: url("/img/math_white.jpg");
+    background-image: url("img/math_white.jpg");
     filter: blur(3px);
     -webkit-filter: blur(3px);
     height: 100%;

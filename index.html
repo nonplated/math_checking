@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="utf-8" http-equiv="encoding">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Math exercises - checking answers</title>
+	<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+	<link href='/css/style.css' rel='stylesheet' type='text/css' media='screen' />
+	<link href='/css/printed.css' rel='stylesheet' type='text/css' media='print' />
+</head>
+
+<body>
+	<div class="bg-image"></div>
+	<div class="page">
+		<div id="js_disabled">Enable JavaScript in your browser to use this page properly.</div>
+		<form id="form1">
+				<div class="welcome">
+					<h1>Hello!</h1>
+					<p>here you can check yours math exercises and finally print 1D code.</p>
+				</div>
+				<ul>
+					<li class="form_row">
+						<label for="year">Select year:</label>
+						<div id="links_years"></div>
+						<input type="text" id="year" class="input l4" maxlength="4" onchange="createLinksForClasses(this.value);" hidden="hidden">
+					</li>
+					<li class="form_row" id="container_classes">
+						<label for="class_nr">Select class:</label>
+						<div id="links_classes"></div>
+						<input id="class_nr" class="input l4" maxlength="1" hidden="hidden">
+					</li>
+					<li class="form_row" id="container_answers">
+						<label for="answers">Answers <div id="chars_counter"></div></label>
+						<input id="answers" class="input l30" maxlength="30" onkeyup="countChars();">
+					</li>
+					<li class="form_row">
+							<div class="error" id="warnings"></div>
+					</li>
+					<li class="form_row" id="container_button">
+						<button type="submit" class="button" onclick="checkAnswers(); return false;">CHECK&#11208;</button>
+					<p class="tip">To miss the answer type <span class="keyboard">SPACE</span> instead.</p>
+					</li>
+				</ul>
+		</form>
+		<form id="results">
+			<ul>
+				<h1>Results</h1>
+				<li class="form-row">
+					<p>Correct: <span id="good_answers"></span></p>
+				</li>
+				<li class="form-row">
+					<p>Mistakes in: <span id="bad_answers"></span></p>
+				</li>
+				<li class="form-row">
+					<button type="submit" class="button" onclick="document.getElementById('form1').style.display='flex'; document.getElementById('results').style.display='none'; return false;">&#11207;BACK</button><button id="print_code" onclick="window.print();">Print code</button>
+					</li>
+				</ul>
+		</form>
+	</div>
+	<div id="printed" class="printed">
+		<!-- here will be code 1D to print -->
+	</div>
+</body>
+<script type="text/javascript" src="js/answers.js"></script>
+<script type="text/javascript" src='js/module.js'></script>
+<script>
+	createLinksForYears();
+	$('js_disabled').style.display = 'none'; // close warning if JS is enabled
+</script>
+</html>

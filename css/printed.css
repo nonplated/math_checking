@@ -1,0 +1,14 @@
+/* for printing reset */
+body {
+   background-color: white;
+   color: black;
+}
+.printed {
+   display: block;
+}
+.page,.bg-image {
+   display: none;
+}
+button {
+   display: none;
+}

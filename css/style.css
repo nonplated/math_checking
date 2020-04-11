@@ -1,0 +1,212 @@
+:root {
+    --background_color: black;
+    --main_forecolor: white;
+    --second_forecolor: rgb(72, 182, 255);
+    --error_color: rgb(177, 39, 39);
+    --correct_color: rgb(53, 173, 53);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #222;
+    color: var(--main_forecolor);
+    font-size: 16px;
+    font-family: "Share Tech Mono", monospace;
+}
+
+.bg-image {
+    background-image: url("/img/math_white.jpg");
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+.page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    background-color: var(--background_color);
+    list-style-type: none;
+    top: 1vh;
+    left: 50%;
+    width: 400px;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    border-color: var(--error_color);
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 3mm;
+    margin-top: 6mm;
+    padding-bottom: 15mm;
+}
+
+#form1,
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-top: 5mm;
+    list-style: none;
+}
+
+.input {
+    font-family: "Share Tech Mono", monospace;
+    font-size: 18px;
+    background-color: var(--background_color);
+    border: 1px solid grey;
+    margin: 2px;
+    color: var(--second_forecolor);
+    font-weight: bold;
+    padding: 2mm;
+}
+
+button {
+    width: 40%;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 3mm;
+    font-family: "Share Tech Mono", monospace;
+    margin-top: 5mm;
+}
+
+li.form_row {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#answers.l30 {
+    border: 2px solid var(--second_forecolor);
+    width: 100%;
+}
+
+.welcome {
+    margin-left: 50px;
+}
+
+.welcome::before {
+    content: "\2B50";
+    position: relative;
+    left: -50px;
+    top: 40px;
+    font-size: 2em;
+}
+
+a {
+    display: inline-block;
+    color: var(--second_forecolor);
+    border: 2px solid var(--second_forecolor);
+    text-decoration: none;
+    padding: 2px;
+    margin: 4px;
+    width: 60px;
+    text-align: center;
+}
+
+a:hover {
+    color: var(--main_forecolor);
+    border-color: var(--main_forecolor);
+}
+
+a.selected {
+    color: var(--background_color);
+    background-color: var(--second_forecolor);
+}
+
+.tip {
+    margin-top: 2mm;
+    margin-bottom: 2mm;
+}
+.keyboard {
+    border: 1px solid var(--main_forecolor);
+    border-radius: 2px;
+    font-size: 0.8em;
+    padding: 1mm;
+}
+.tip::before {
+    content: " ⮆ "; /* two arrows directed right */
+    font-weight: bold;
+    color: var(--second_forecolor);
+}
+#results {
+    position: relative;
+    line-height: 2em;
+    display: none;
+}
+#results p {
+    font-size: 1.6em;
+    margin-top: 2mm;
+}
+#good_answers {
+    background-color: var(--correct_color);
+}
+#bad_answers {
+    background-color: var(--error_color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#bad_answers span {
+    margin: 2mm;
+}
+
+.button {
+    color: black;
+    background-color: var(--main_forecolor);
+}
+.button:hover {
+    color: white;
+    background-color: var(--second_forecolor);
+}
+.error {
+    background-color: var(--error_color);
+    color: black;
+}
+
+.printed {
+    display: none; /* displayed by JS */
+}
+#print_code {
+    display: none; /* displayed by JS */
+}
+
+#container_answers {
+    display: none; /* displayed by JS */
+}
+#container_classes {
+    display: none; /* displayed by JS */
+}
+#container_button {
+    display: none; /* displayed by JS */
+}
+
+#js_disabled { /* hidden by JS */
+    background-color: var(--error_color);
+    padding: 5mm;
+    border-radius: 10px;
+}

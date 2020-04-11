@@ -109,6 +109,7 @@ li.form_row {
 }
 
 .welcome::before {
+	font-family: "Share Tech Mono", monospace;
     content: "\2B50";
     position: relative;
     left: -50px;

@@ -94,10 +94,14 @@ function getGoodAnswers(year, class_nr) {
     return output;
 }
 
-function getCodeToScan(text) {
-    return (
-        "./barcode/barcode_php/barcode.php?text=" + good_answers + "&size=30"
-    );
+function createCodeToScan(text) {
+	JsBarcode("#barcode", text, {
+		format: "code128",
+		lineColor: "#000",
+		width: 1,
+		height: 80,
+		displayValue: false
+	  });
 }
 
 function checkAnswers() {
@@ -159,11 +163,9 @@ function checkAnswers() {
 
         // code for print and scan
         if (good_counter === good_answers.length) {
-            $("printed").innerHTML = "";
 
-            let img = document.createElement("img");
-            img.src = getCodeToScan(good_answers);
-            $("printed").appendChild(img);
+            // create image in svg
+            createCodeToScan(good_answers);
 
             let p = document.createElement("p");
             p.innerHTML = good_answers + "  (" + year + ", " + class_nr + ")";

@@ -53,17 +53,19 @@
 					<p>Mistakes in: <span id="bad_answers"></span></p>
 				</li>
 				<li class="form-row">
-					<button type="submit" class="button" onclick="document.getElementById('form1').style.display='flex'; document.getElementById('results').style.display='none'; return false;">&#11207;BACK</button><button id="print_code" onclick="window.print();">Print code</button>
+					<button type="submit" class="button" onclick="document.getElementById('form1').style.display='flex'; document.getElementById('results').style.display='none'; return false;">&#11207;BACK</button><button id="print_code" class="button" onclick="window.print();">Print code</button>
 					</li>
 				</ul>
 		</form>
 	</div>
 	<div id="printed" class="printed">
 		<!-- here will be code 1D to print -->
+		<svg id="barcode"></svg>
 	</div>
 </body>
-<script type="text/javascript" src="js/answers.js"></script>
-<script type="text/javascript" src='js/module.js'></script>
+<script type="text/javascript" src="/js/answers.js"></script>
+<script type="text/javascript" src='/js/module.js'></script>
+<script type="text/javascript" src='/js/JsBarcode.code128.min.js'></script>
 <script>
 	createLinksForYears();
 	$('js_disabled').style.display = 'none'; // close warning if JS is enabled

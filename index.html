@@ -11,8 +11,8 @@
 </head>
 
 <body>
-	<div class="bg-image"></div>
-	<div class="page">
+	<div id="background-image" class="bg-image"></div>
+	<div id="page" class="page">
 		<div id="js_disabled">Enable JavaScript in your browser to use this page properly.</div>
 		<form id="form1">
 				<div class="welcome">
@@ -60,16 +60,18 @@
 	</div>
 
 	<div id="printed" class="printed">
-		<!-- here will be code 1D to print -->
-		<svg id="barcode"></svg>
+		<svg id="barcode"></svg><!-- here will be code 1D to print -->
 	</div>
 
+	<script type="text/javascript" src='js/JsBarcode.code128.min.js'></script>
 	<script type="text/javascript" src="js/answers.js"></script>
 	<script type="text/javascript" src='js/module.js'></script>
-	<script type="text/javascript" src='js/JsBarcode.code128.min.js'></script>
 	<script>
 		createLinksForYears();
-		$('js_disabled').style.display = 'none'; // close warning if JS is enabled
+		//hiding elements
+		document.getElementById('js_disabled').style.display = 'none'; // close warning if JS is enabled
+		//showing elements
+		document.getElementById('background-image').classList.add('bg-image-goback');
 	</script>
 
 </body>

@@ -22,17 +22,21 @@ body {
     color: var(--main_forecolor);
     font-size: 16px;
     font-family: "Share Tech Mono", monospace;
+    overflow: hidden;
 }
 
 .bg-image {
-    background-image: url("img/math_white.jpg");
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
+    background-image: url("../img/math_white.jpg");
     height: 100%;
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
-    z-index: -2;
+    transition: all 4s 0s ease-in-out;
+}
+
+.bg-image-goback {
+    transform: scale(105%);
+    filter: blur(5px) brightness(60%);
 }
 
 .page {
@@ -50,7 +54,6 @@ body {
     border-top: 10px solid;
     border-bottom: 10px solid;
     border-color: var(--error_color);
-    /* border-radius: 3px; */
     margin: 0 auto;
     padding: 3mm;
     margin-top: 6mm;
@@ -149,7 +152,7 @@ a.selected {
     padding: 1mm;
 }
 .tip::before {
-    content: " ⮆ "; /* two arrows directed right */
+    content: " !!! "; /* two arrows directed right */
     font-weight: bold;
     color: var(--second_forecolor);
 }
